@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-LeftSlideMenu support two display style
+LeftSlideMenu support two display style fo user
                        DESC
 
   s.homepage         = 'https://github.com/MoreFunTech/MFSlideMenu.git'
