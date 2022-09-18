@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MFSlideMenu'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of MFSlideMenu.'
+  s.version          = '0.0.1'
+  s.summary          = 'LeftSlideMenu'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,14 +18,14 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+LeftSlideMenu support two display style
                        DESC
 
-  s.homepage         = 'https://github.com/zouyuk/MFSlideMenu'
+  s.homepage         = 'https://github.com/MoreFunTech/MFSlideMenu.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zouyuk' => '461616708@qq.com' }
-  s.source           = { :git => 'https://github.com/zouyuk/MFSlideMenu.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/MoreFunTech/MFSlideMenu.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
