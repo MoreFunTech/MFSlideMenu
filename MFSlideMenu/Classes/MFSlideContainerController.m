@@ -15,8 +15,7 @@ CGFloat const kMaxSpeed = 800;
 @property (nonatomic, strong) UIViewController *mainVC;
 /// 侧边控制器
 @property (nonatomic, strong) UIViewController *leftVC;
-/// 开始的边缘平移手势
-@property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *leftEdgePan;
+
 /// 侧滑后的平移手势
 @property (nonatomic, strong) UIPanGestureRecognizer *leftPan;
 /// 侧滑后的主控制器平移手势
@@ -407,6 +406,13 @@ CGFloat const kMaxSpeed = 800;
     self.leftVC.view.frame = CGRectMake(self.leftVcOriginX, 0, self.view.bounds.size.width, self.view.bounds.size.height);
 }
 
+-(void)setStatusBarType:(UIStatusBarStyle)statusBarType{
+    _statusBarType = statusBarType;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self setNeedsStatusBarAppearanceUpdate];
+    });
+}
+
 #pragma mark - Getter
 - (UIScreenEdgePanGestureRecognizer *)leftEdgePan{
     if (!_leftEdgePan) {
@@ -477,6 +483,18 @@ CGFloat const kMaxSpeed = 800;
         _glView.alpha = 0.1;
     }
     return _glView;
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(configStatusBarStyle)]) {
+        UIStatusBarStyle delegateStatusBarType = [self.delegate configStatusBarStyle];
+        return delegateStatusBarType;
+    }
+    UIStatusBarStyle tempStatusBar = _statusBarType;
+    //使用完复原
+    _statusBarType = self.defaultStatusBarType;
+    return tempStatusBar;
 }
 
 @end

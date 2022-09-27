@@ -34,6 +34,9 @@ typedef enum {
 /// 侧边栏消失
 - (void)leftViewDidDisappear;
 
+/// 状态栏颜色配置
+- (UIStatusBarStyle)configStatusBarStyle;
+
 @end
 
 @interface MFSlideContainerController : UIViewController
@@ -76,6 +79,14 @@ typedef enum {
 
 /// 侧边栏显示状态（默认隐藏）
 @property (nonatomic, assign) MFSlideShowStatusType showStatus;
+/// 开始的边缘平移手势
+@property (nonatomic, strong) UIScreenEdgePanGestureRecognizer *leftEdgePan;
+
+/// 默认状态栏颜色（默认 UIStatusBarStyleDefault）
+@property (nonatomic, assign) UIStatusBarStyle defaultStatusBarType;
+/// 状态栏颜色
+@property (nonatomic, assign) UIStatusBarStyle statusBarType;
+
 
 /// 显示侧边栏
 - (void)showLeftView;
